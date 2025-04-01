@@ -1,159 +1,43 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soully — додаток для медитацій</title>
-  <!-- Підключення шрифту Nunito -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Загальні стилі */
-    * {
-      box-sizing: border-box;
-    }
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Nunito', sans-serif;
-      scroll-behavior: smooth;
-      color: #333;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    /* Hero секція */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      background: url('desktop-banner.jpg') no-repeat center center/cover;
-    }
-    @media (max-width: 768px) {
-      .hero {
-        background: url('mobile-banner.jpg') no-repeat center center/cover;
-      }
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.35);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      text-align: center;
-      padding: 0 20px;
-      color: #fff;
-    }
-    .hero-content h1 {
-      font-size: 3rem;
-      margin: 0 0 20px;
-      font-weight: 700;
-    }
-    .hero-content p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
-    .hero-content .btn {
-      padding: 14px 28px;
-      background-color: #36d1dc;
-      color: #fff;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: background-color 0.3s;
-    }
-    .hero-content .btn:hover {
-      background-color: #2bbac4;
-    }
-    /* Основний вміст */
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .section p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto 30px;
-    }
-    /* Кнопка завантаження */
-    .download-section {
-      background-color: #f7f7f7;
-      padding: 40px 20px;
-    }
-    .download-section .btn {
-      padding: 16px 32px;
-      background-color: #36d1dc;
-      color: #fff;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: background-color 0.3s;
-    }
-    .download-section .btn:hover {
-      background-color: #2bbac4;
-    }
-    /* Футер */
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-  <!-- Hero секція з банером -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Soully — додаток для медитацій</h1>
-      <p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Soully — додаток для медитацій</title>
+        <!-- Підключення шрифту Nunito -->
+        <link href="css/theme.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>/* Загальні стилі */* { box-sizing: border-box; } body, html { margin: 0; padding: 0; font-family: 'Nunito', sans-serif; scroll-behavior: smooth; color: #333; } a { text-decoration: none; color: inherit; } /* Hero секція */.hero { position: relative; width: 100%; height: 100vh; background: url('images/desktop-banner.webp') no-repeat center center/cover; } @media (max-width: 768px) { .hero {  background: url('mobile-banner.jpg') no-repeat center center/cover; } } .hero::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.35); } .hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 0 20px; color: #fff; } .hero-content h1 { font-size: 3rem; margin: 0 0 20px; font-weight: 700; } .hero-content p { font-size: 1.2rem; max-width: 600px; line-height: 1.6; margin-bottom: 30px; } .hero-content .btn { padding: 14px 28px; background-color: #36d1dc; color: #fff; border-radius: 8px; font-weight: 600; transition: background-color 0.3s; } .hero-content .btn:hover { background-color: #2bbac4; } /* Основний вміст */.section { padding: 60px 20px; text-align: center; } .section h2 { font-size: 2rem; margin-bottom: 20px; } .section p { font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto 30px; } /* Кнопка завантаження */.download-section { background-color: #f7f7f7; padding: 40px 20px; } .download-section .btn { padding: 16px 32px; background-color: #36d1dc; color: #fff; border-radius: 8px; font-weight: 600; transition: background-color 0.3s; } .download-section .btn:hover { background-color: #2bbac4; } /* Футер */footer { background-color: #333; color: #fff; padding: 20px; text-align: center; font-size: 0.9rem; }</style>
+    </head>
+    <body>
+        <!-- Hero секція з банером -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Soully — додаток для медитацій</h1>
+                <p>
         Авторський додаток, який допомагає знизити стрес, відновити внутрішній баланс та зануритися у світ усвідомленості.
-        Понад 80 унікальних медитацій, створених та записаних автором, чекають на вас.
-      </p>
-      <a href="https://apps.apple.com" class="btn">Завантажити додаток</a>
-    </div>
-  </section>
-  
-  <!-- Секція "Про додаток" -->
-  <section class="section">
-    <h2>Про Soully</h2>
-    <p>
-      Soully — це ваш особистий помічник у світі медитацій. Додаток створено для того, щоб допомогти вам знайти гармонію, розвинути усвідомленість та підтримувати внутрішній баланс у щоденному житті.
-    </p>
-    <p>
-      Завдяки простому та інтуїтивно зрозумілому інтерфейсу, ви можете обирати медитації, які відповідають вашому настрою, та насолоджуватися як текстовими, так і аудіо сесіями, що дозволяє практикувати де завгодно і коли завгодно.
-    </p>
-  </section>
-  
-  <!-- Секція завантаження додатку -->
-  <section class="download-section">
-    <h2>Спробуйте Soully</h2>
-    <p>
-      Почніть свій шлях до внутрішньої гармонії вже сьогодні. Завантажте додаток і відкрийте для себе світ медитацій та самопізнання.
-    </p>
-    <a href="https://apps.apple.com" class="btn">Завантажити з App Store</a>
-  </section>
-  
-  <!-- Футер -->
-  <footer>
-    &copy; 2024 Soully. Всі права захищено.
-  </footer>
-</body>
+        Понад 80 унікальних медитацій, створених та записаних автором, чекають на вас. </p>
+                <a href="https://apps.apple.com" class="btn">Завантажити додаток</a>
+            </div>
+        </section>
+        <!-- Секція "Про додаток" -->
+        <section class="section">
+            <h2>Про Soully</h2>
+            <p>
+      Soully — це ваш особистий помічник у світі медитацій. Додаток створено для того, щоб допомогти вам знайти гармонію, розвинути усвідомленість та підтримувати внутрішній баланс у щоденному житті. </p>
+            <p>
+      Завдяки простому та інтуїтивно зрозумілому інтерфейсу, ви можете обирати медитації, які відповідають вашому настрою, та насолоджуватися як текстовими, так і аудіо сесіями, що дозволяє практикувати де завгодно і коли завгодно. </p>
+        </section>
+        <!-- Секція завантаження додатку -->
+        <section class="download-section">
+            <h2>Спробуйте Soully</h2>
+            <p>
+      Почніть свій шлях до внутрішньої гармонії вже сьогодні. Завантажте додаток і відкрийте для себе світ медитацій та самопізнання. </p>
+            <a href="https://apps.apple.com" class="btn">Завантажити з App Store</a>
+        </section>
+        <!-- Футер -->
+        <footer>
+            &copy; 2024 Soully. Всі права захищено.
+</footer>
+    </body>
 </html>
