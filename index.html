@@ -1,43 +1,190 @@
 <!DOCTYPE html>
 <html lang="uk">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Soully — додаток для медитацій</title>
-        <!-- Підключення шрифту Nunito -->
-        <link href="css/theme.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <style>/* Загальні стилі */* { box-sizing: border-box; } body, html { margin: 0; padding: 0; font-family: 'Nunito', sans-serif; scroll-behavior: smooth; color: #333; } a { text-decoration: none; color: inherit; } /* Hero секція */.hero { position: relative; width: 100%; height: 100vh; background: url('images/desktop-banner.webp') no-repeat center center/cover; } @media (max-width: 768px) { .hero {  background: url('mobile-banner.jpg') no-repeat center center/cover; } } .hero::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.35); } .hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 0 20px; color: #fff; } .hero-content h1 { font-size: 3rem; margin: 0 0 20px; font-weight: 700; } .hero-content p { font-size: 1.2rem; max-width: 600px; line-height: 1.6; margin-bottom: 30px; } .hero-content .btn { padding: 14px 28px; background-color: #36d1dc; color: #fff; border-radius: 8px; font-weight: 600; transition: background-color 0.3s; } .hero-content .btn:hover { background-color: #2bbac4; } /* Основний вміст */.section { padding: 60px 20px; text-align: center; } .section h2 { font-size: 2rem; margin-bottom: 20px; } .section p { font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto 30px; } /* Кнопка завантаження */.download-section { background-color: #f7f7f7; padding: 40px 20px; } .download-section .btn { padding: 16px 32px; background-color: #36d1dc; color: #fff; border-radius: 8px; font-weight: 600; transition: background-color 0.3s; } .download-section .btn:hover { background-color: #2bbac4; } /* Футер */footer { background-color: #333; color: #fff; padding: 20px; text-align: center; font-size: 0.9rem; }</style>
-    </head>
-    <body>
-        <!-- Hero секція з банером -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Soully — додаток для медитацій</h1>
-                <p>
-        Авторський додаток, який допомагає знизити стрес, відновити внутрішній баланс та зануритися у світ усвідомленості.
-        Понад 80 унікальних медитацій, створених та записаних автором, чекають на вас. </p>
-                <a href="https://apps.apple.com" class="btn">Завантажити додаток</a>
-            </div>
-        </section>
-        <!-- Секція "Про додаток" -->
-        <section class="section">
-            <h2>Про Soully</h2>
-            <p>
-      Soully — це ваш особистий помічник у світі медитацій. Додаток створено для того, щоб допомогти вам знайти гармонію, розвинути усвідомленість та підтримувати внутрішній баланс у щоденному житті. </p>
-            <p>
-      Завдяки простому та інтуїтивно зрозумілому інтерфейсу, ви можете обирати медитації, які відповідають вашому настрою, та насолоджуватися як текстовими, так і аудіо сесіями, що дозволяє практикувати де завгодно і коли завгодно. </p>
-        </section>
-        <!-- Секція завантаження додатку -->
-        <section class="download-section">
-            <h2>Спробуйте Soully</h2>
-            <p>
-      Почніть свій шлях до внутрішньої гармонії вже сьогодні. Завантажте додаток і відкрийте для себе світ медитацій та самопізнання. </p>
-            <a href="https://apps.apple.com" class="btn">Завантажити з App Store</a>
-        </section>
-        <!-- Футер -->
-        <footer>
-            &copy; 2024 Soully. Всі права захищено.
-</footer>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soully — додаток для медитацій</title>
+  <!-- Підключення шрифту Nunito з Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Загальні стилі */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      font-family: 'Nunito', sans-serif;
+      height: 100%;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    
+    /* Параллакс-клас для фонових зображень */
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    /* Hero секція */
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background: url('images\desktop-banner.webp') no-repeat center center/cover; /* Замість hero-bg.jpg вставте свій файл */
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.35); /* затемнення для кращої читабельності тексту */
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+    }
+    .hero-title {
+      display: flex;
+      align-items: center;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero-title .icon {
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+      margin-right: 10px;
+      background: url('images\icon.png') no-repeat center center/contain; /* Замість icon.png вставте свій файл */
+    }
+    .hero-slogan {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .hero-description {
+      font-size: 1rem;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      line-height: 1.5;
+    }
+    .hero-note {
+      font-size: 0.75rem;
+      text-align: right;
+      width: 100%;
+      padding: 0 20px;
+      margin-top: 20px;
+    }
+    
+    /* Секції */
+    .section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .section.dark {
+      background-color: #18143E;
+      color: #fff;
+    }
+    .section-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section-content .image,
+    .section-content .text {
+      flex: 1 1 300px;
+      padding: 20px;
+    }
+    .section-content .image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .section-content .text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    /* Адаптивність */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-slogan {
+        font-size: 1.3rem;
+      }
+      .hero-description {
+        font-size: 0.95rem;
+      }
+      .section-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero секція з параллакс ефектом -->
+  <section class="hero parallax">
+    <div class="hero-content">
+      <div class="hero-title">
+        <span class="icon"></span>
+        <span>So•U•LLY</span>
+      </div>
+      <div class="hero-slogan">
+        So U Learn to Love Yourself
+      </div>
+      <div class="hero-description">
+        Покращити якість життя, віднайти внутрішній спокій, позбутися від гнітючих думок, оздоровити власне тіло цілком реально з додатком медитацій та здоров’я Soully.
+      </div>
+      <div class="hero-note">
+        *** Без ШІ: аудіо озвучено авторкою<br>
+        *** Без реєстрації: застосунок не збирає персональні дані
+      </div>
+    </div>
+  </section>
+  
+  <!-- Другий екран -->
+  <section class="section dark parallax">
+    <div class="section-content image-left">
+      <div class="image">
+        <img src="second-image.jpg" alt="Місце сили і гармонії">
+      </div>
+      <div class="text">
+        Місце сили і гармонії поміж буремних подій життя. Осели тишу всередині себе із дихальними, медитативними, психологічними та рейкі практиками авторського додатку Soully.
+      </div>
+    </div>
+  </section>
+  
+  <!-- Третій екран -->
+  <section class="section dark parallax">
+    <div class="section-content image-right">
+      <div class="image">
+        <img src="third-image.jpg" alt="Баланс між емоціями">
+      </div>
+      <div class="text">
+        Віднови баланс між емоціями, думками та діями. Займайся за індивідуальною релакс-програмою, коли тобі зручно.
+      </div>
+    </div>
+  </section>
+</body>
 </html>
