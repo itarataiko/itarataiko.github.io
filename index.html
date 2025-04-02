@@ -177,7 +177,7 @@
       font-weight: 600;
     }
     
-    /* 4. Секція галереї з 7 картинок (існуюча) */
+    /* 4. Галерея з 7 картинок (існуюча) */
     .gallery {
       background-color: #18143E;
       padding: 40px 20px;
@@ -324,11 +324,32 @@
       max-width: 1000px;
       margin: 0 auto;
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       gap: 20px;
     }
+    /* В десктопній версії заголовок і підзаголовок знаходяться зверху, а галерея скріншотів – під ними */
+    .screenshots-text {
+      width: 100%;
+      max-width: 1000px;
+      text-align: right;
+      padding: 0 20px;
+    }
+    .screenshots-text h2 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .screenshots-text h2 span {
+      display: block;
+    }
+    .screenshots-text p {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
     .screenshots-gallery {
-      flex: 1;
+      width: 100%;
+      max-width: 1000px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
@@ -344,26 +365,8 @@
       object-fit: contain;
       display: block;
     }
-    .screenshots-text {
-      flex: 1;
-      text-align: right;
-      padding-left: 20px;
-      margin-top: 0;
-    }
-    .screenshots-text h2 {
-      font-size: 2.5rem;
-      line-height: 1.2;
-      margin: 0;
-    }
-    .screenshots-text h2 span {
-      display: block;
-    }
-    .screenshots-text p {
-      font-size: 1rem;
-      margin-top: 10px;
-    }
     
-    /* Для мобільних: секція стає вертикальною, галерея - горизонтальною прокруткою */
+    /* Для мобільних: секція залишається вертикальною, галерея – горизонтальною прокруткою */
     @media (max-width: 768px) {
       .screenshots-container {
         flex-direction: column;
@@ -372,7 +375,6 @@
       .screenshots-text {
         text-align: center;
         padding-left: 0;
-        margin-bottom: 20px;
       }
       .screenshots-gallery {
         display: flex;
@@ -383,7 +385,6 @@
       .screenshots-gallery .img-block {
         flex: 0 0 auto;
         width: 80%;
-        height: auto;
       }
     }
     
@@ -406,6 +407,7 @@
 </head>
 <body>
   <!-- 1. Перший екран (Hero) -->
+  
   <section class="hero parallax">
     <div class="hero-content">
       <div class="hero-title">
@@ -423,7 +425,9 @@
     </div>
   </section>
   
-  <!-- 2. Другий екран -->
+
+
+  <!-- 2. Другий екран 
   <section class="screen parallax dark">
     <div class="container">
       <div class="block-image-left">
@@ -437,8 +441,9 @@
       </div>
     </div>
   </section>
+  -->
   
-  <!-- 3. Третій екран -->
+  <!-- 3. Третій екран 
   <section class="screen parallax dark">
     <div class="container">
       <div class="block-image-right">
@@ -452,12 +457,15 @@
       </div>
     </div>
   </section>
-  
+  -->
+
   <!-- 4. Галерея з 7 картинок (існуюча) -->
   <section class="gallery">
+  <!--
     <header class="gallery-header">
       <h2>Віднови баланс між емоціями, думками та діями. Займайся за індивідуальною релакс-програмою коли тобі зручно.</h2>
     </header>
+    -->
     <div class="grid">
       <div class="col1">
         <div class="img-block">
@@ -526,19 +534,21 @@
   <!-- 5. Секція галереї скрінів додатку (розташована в кінці сторінки) -->
   <section class="screenshots-section">
     <div class="screenshots-container">
-      <div class="screenshots-gallery">
-        <div class="img-block"><img src="images/screenshot1.webp" alt="Screen 1"></div>
-        <div class="img-block"><img src="images/screenshot2.webp" alt="Screen 2"></div>
-        <div class="img-block"><img src="images/screenshot3.webp" alt="Screen 3"></div>
-        <div class="img-block"><img src="images/screenshot4.webp" alt="Screen 4"></div>
-        <div class="img-block"><img src="images/screenshot5.webp" alt="Screen 5"></div>
-      </div>
       <div class="screenshots-text">
         <h2>
           <span>Обирай</span>
           <span>SOULLY</span>
         </h2>
         <p>додаток, що подбає про твій спокій</p>
+      </div>
+      <div class="screenshots-gallery">
+        <div class="img-block"><img src="images/screenshot1.webp" alt="Screen 1"></div>
+        <div class="img-block"><img src="images/screenshot2.webp" alt="Screen 2"></div>
+        <div class="img-block"><img src="images/screenshot8.webp" alt="Screen 3"></div>
+        <div class="img-block"><img src="images/screenshot4.webp" alt="Screen 4"></div>
+        <div class="img-block"><img src="images/screenshot5.webp" alt="Screen 5"></div>
+        <div class="img-block"><img src="images/screenshot6.webp" alt="Screen 6"></div>
+        <div class="img-block"><img src="images/screenshot7.webp" alt="Screen 7"></div>
       </div>
     </div>
   </section>
