@@ -211,14 +211,30 @@
       width: 100%;
       display: block;
     }
-    .col1 .img-block .caption {
+    /* В галереї текст займає все поле картинки */
+    .gallery .img-block .caption {
       position: absolute;
-      bottom: 0;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 8px;
-      background: rgba(0,0,0,0.6);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
       font-size: 0.9rem;
       color: #fff;
+      text-align: center;
+      background: none;
+    }
+    .gallery .img-block .caption .caption-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+    .gallery .img-block .caption .caption-text {
+      font-size: 0.9rem;
     }
     /* Друга колонка: два зображення зверху, одне знизу */
     .col2 {
@@ -243,21 +259,36 @@
     }
     .col2 .img-block .caption {
       position: absolute;
-      bottom: 0;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 8px;
-      background: rgba(0,0,0,0.6);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
       font-size: 0.9rem;
       color: #fff;
+      text-align: center;
+      background: none;
     }
-    /* Нижній блок: одна прямокутна картинка */
+    .col2 .img-block .caption .caption-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+    .col2 .img-block .caption .caption-text {
+      font-size: 0.9rem;
+    }
+    /* Нижній блок: одна прямокутна картинка, займає 30% висоти вікна */
     .full-width {
       max-width: 1000px;
       margin: 20px auto 0;
       position: relative;
       border-radius: 8px;
       overflow: hidden;
-      height: 30vh; /* займає 30% висоти вікна */
+      height: 30vh;
     }
     .full-width img {
       width: 100%;
@@ -267,12 +298,27 @@
     }
     .full-width .caption {
       position: absolute;
-      bottom: 0;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 8px;
-      background: rgba(0,0,0,0.6);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
       font-size: 0.9rem;
       color: #fff;
+      text-align: center;
+      background: none;
+    }
+    .full-width .caption .caption-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+    .full-width .caption .caption-text {
+      font-size: 0.9rem;
     }
     
     /* Адаптивність */
@@ -348,20 +394,23 @@
         <div class="img-block">
           <img src="images/image1.webp" alt="#Аудіо">
           <div class="caption">
-            #Аудіо. Терапія звуком. Бінауральні ритми, співочі чаші, ASMR, звуки природи.
+            <span class="caption-title">#Аудіо.</span>
+            <span class="caption-text"> Терапія звуком. Бінауральні ритми, співочі чаші, ASMR, звуки природи… - обери бажаний енергетичний ефект.</span>
           </div>
         </div>
         <div class="top">
           <div class="img-block">
             <img src="images/image2.webp" alt="#Пранаями">
             <div class="caption">
-              #Пранаями. Техніки дихання для відновлення балансу нервової системи.
+              <span class="caption-title">#Пранаями.</span>
+              <span class="caption-text"> Техніки дихання для відновлення балансу нервової системи.</span>
             </div>
           </div>
           <div class="img-block">
             <img src="images/image3.webp" alt="#У стилі Майндфулнес">
             <div class="caption">
-              #У стилі Майндфулнес. Налагоджують здорові стосунки зі світом і собою.
+              <span class="caption-title">#У стилі Майндфулнес.</span>
+              <span class="caption-text"> Практики позбавляють звички негативно мислити, налагоджують здорові стосунки зі світом і собою.</span>
             </div>
           </div>
         </div>
@@ -371,13 +420,15 @@
           <div class="img-block">
             <img src="images/image4.webp" alt="#Медитативні казки для дітей">
             <div class="caption">
-              #Медитативні казки для дітей. Заряджають добром, надихають, вчать довіряти власним почуттям.
+              <span class="caption-title">#Медитативні казки для дітей.</span>
+              <span class="caption-text"> Заряджають добром, надихають, вчать довіряти власним почуттям.</span>
             </div>
           </div>
           <div class="img-block">
             <img src="images/image5.webp" alt="#Антистрес-допомога">
             <div class="caption">
-              #Антистрес-допомога. Вправи для швидкого опанування сильних емоцій.
+              <span class="caption-title">#Антистрес-допомога.</span>
+              <span class="caption-text"> Вправи для швидкого опанування сильних емоцій.</span>
             </div>
           </div>
         </div>
@@ -385,7 +436,8 @@
           <div class="img-block">
             <img src="images/image6.webp" alt="#Дистанційні сеанси Рейкі">
             <div class="caption">
-              #Дистанційні сеанси Рейкі. Глибока енергетична практика, що занурює в цілющий спокій, де відбувається найкраще оздоровлення тіла, емоцій, життя. Робота з психосоматикою.
+              <span class="caption-title">#Дистанційні сеанси Рейкі.</span>
+              <span class="caption-text"> Глибока енергетична практика, що занурює в цілющий спокій, де відбувається найкраще оздоровлення тіла, емоцій, життя. Робота з психосоматикою.</span>
             </div>
           </div>
         </div>
@@ -395,7 +447,8 @@
       <div class="img-block">
         <img src="images/image7.webp" alt="#Авторський аудіокурс">
         <div class="caption">
-          #Авторський аудіокурс на основі майндфулнес і статті-підказки для легкої корисної практики.
+          <span class="caption-title">#Авторський аудіокурс.</span>
+          <span class="caption-text"> На основі майндфулнес і статті-підказки для легкої корисної практики.</span>
         </div>
       </div>
     </div>
