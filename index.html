@@ -4,23 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soully — додаток для медитацій</title>
-  <!-- Підключення шрифту Nunito з Google Fonts -->
+  <!-- Підключення шрифту Nunito -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* Загальні стилі */
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
     html, body {
       font-family: 'Nunito', sans-serif;
-      overflow-x: hidden;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
-    a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
     
-    /* Параллакс */
+    /* Параллакс для фоновых секций */
     .parallax {
       background-attachment: fixed;
       background-position: center;
@@ -33,42 +36,47 @@
       position: relative;
       width: 100%;
       height: 100vh;
-      background: url('desktop-banner.jpg') no-repeat center center/cover;
+      background: url('hero-desktop.jpg') no-repeat center center/cover;
     }
+    /* Для мобільних пристроїв */
     @media (max-width: 768px) {
       .hero {
-        background: url('mobile-banner.jpg') no-repeat center center/cover;
+        background: url('hero-mobile.jpg') no-repeat center center/cover;
       }
     }
     .hero::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.35);
+      background: rgba(0,0,0,0.35);
       z-index: 1;
     }
     .hero-content {
       position: relative;
       z-index: 2;
       width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       padding: 20px;
       color: #fff;
     }
+    /* Заголовок: іконка зліва, текст по центру */
     .hero-title {
       display: flex;
       align-items: center;
-      justify-content: center;
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 10px;
     }
     .hero-title .icon {
       display: inline-block;
-      width: 3rem; /* приблизительно высота букв */
+      width: 3rem;
       height: 3rem;
       margin-right: 10px;
       background: url('icon.png') no-repeat center center/contain;
@@ -85,54 +93,54 @@
     }
     .hero-note {
       position: absolute;
-      right: 20px;
       bottom: 20px;
+      right: 20px;
       font-size: 0.75rem;
       text-align: right;
       color: #fff;
     }
     
-    /* 2. Другий екран */
+    /* 2. Секція другого екрану */
     .screen {
       position: relative;
-      width: 100%;
       min-height: 100vh;
+      padding: 40px 20px;
+      background-color: #18143E;
+      color: #fff;
       display: flex;
       align-items: center;
-      padding: 40px 20px;
-      color: #fff;
     }
-    .screen.dark {
-      background-color: #18143E;
-    }
-    .screen-content {
+    .screen .container {
       max-width: 1000px;
       margin: 0 auto;
+      position: relative;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
-      gap: 20px;
     }
-    /* Блок для екрану з картинкою зліва і текстом справа */
+    /* Блок з картинкою зліва і текстом справа */
     .block-image-left {
-      flex: 1 1 400px;
+      flex: 1;
       display: flex;
       align-items: center;
       gap: 20px;
+      position: relative;
+      flex-wrap: wrap;
     }
     .block-image-left .img-container {
-      flex: 1;
+      flex: 1 1 400px;
     }
     .block-image-left .img-container img {
       width: 100%;
       border-radius: 8px;
     }
     .block-image-left .text-container {
-      flex: 1;
+      flex: 1 1 400px;
       text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
-    /* Заголовок, який обтікає картинку (розташований зверху праворуч) */
+    /* Заголовок, що обтікає картинку (розташований зверху праворуч) */
     .block-image-left .floating-title {
       position: absolute;
       top: 20px;
@@ -141,23 +149,27 @@
       font-weight: 600;
     }
     
-    /* Блок для екрану з картинкою справа і текстом зліва */
+    /* 3. Секція третього екрану */
     .block-image-right {
-      flex: 1 1 400px;
+      flex: 1;
       display: flex;
       align-items: center;
       gap: 20px;
+      position: relative;
+      flex-wrap: wrap;
     }
     .block-image-right .img-container {
-      flex: 1;
+      flex: 1 1 400px;
     }
     .block-image-right .img-container img {
       width: 100%;
       border-radius: 8px;
     }
     .block-image-right .text-container {
-      flex: 1;
+      flex: 1 1 400px;
       text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
     .block-image-right .floating-title {
       position: absolute;
@@ -167,116 +179,110 @@
       font-weight: 600;
     }
     
-    /* 3. Галерея з 7 картинок */
+    /* 4. Галерея з 7 картинок */
     .gallery {
+      background-color: #18143E;
       padding: 40px 20px;
-      background-color: #f5f5f5;
+      color: #fff;
     }
-    .gallery .top-grid {
+    .gallery .grid {
       display: flex;
-      gap: 20px;
       max-width: 1000px;
       margin: 0 auto;
+      gap: 20px;
     }
-    /* Перша колонка: одна картинка зверху, дві внизу */
+    /* Перша колонка: одна картинка зверху, дві знизу (рядом) */
     .col1 {
       flex: 1;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
-    .col1 .img-block {
-      background: #ddd;
+    .col1 .top, .col1 .bottom {
+      display: flex;
+      gap: 20px;
+    }
+    .col1 .top .img-block {
+      flex: 1;
+      position: relative;
       border-radius: 8px;
       overflow: hidden;
+    }
+    .col1 .bottom .img-block {
+      flex: 1;
       position: relative;
+      border-radius: 8px;
+      overflow: hidden;
     }
     .col1 .img-block img {
       width: 100%;
       display: block;
     }
     .col1 .img-block .caption {
-      padding: 10px;
-      font-size: 0.9rem;
-      background: rgba(0,0,0,0.6);
-      color: #fff;
       position: absolute;
       bottom: 0;
       width: 100%;
+      padding: 8px;
+      background: rgba(0,0,0,0.6);
+      font-size: 0.9rem;
+      color: #fff;
     }
-    /* Вторая колонка: два изображения вверху (рядом) и одно под ними */
+    /* Друга колонка: два зображення зверху (рядом) та одне знизу */
     .col2 {
       flex: 1;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
-    .col2 .top-row {
+    .col2 .top {
       display: flex;
       gap: 20px;
     }
-    .col2 .top-row .img-block {
+    .col2 .top .img-block {
       flex: 1;
-      background: #ddd;
+      position: relative;
       border-radius: 8px;
       overflow: hidden;
-      position: relative;
     }
-    .col2 .top-row .img-block img {
+    .col2 .bottom .img-block {
+      flex: 1;
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .col2 .img-block img {
       width: 100%;
       display: block;
     }
-    .col2 .top-row .img-block .caption {
-      padding: 10px;
-      font-size: 0.9rem;
-      background: rgba(0,0,0,0.6);
-      color: #fff;
+    .col2 .img-block .caption {
       position: absolute;
       bottom: 0;
       width: 100%;
-    }
-    .col2 .bottom-row .img-block {
-      background: #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-      position: relative;
-    }
-    .col2 .bottom-row .img-block img {
-      width: 100%;
-      display: block;
-    }
-    .col2 .bottom-row .img-block .caption {
-      padding: 10px;
-      font-size: 0.9rem;
+      padding: 8px;
       background: rgba(0,0,0,0.6);
+      font-size: 0.9rem;
       color: #fff;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
     }
-    /* Нижний блок: одна прямокутна картинка на всю ширину */
-    .bottom-full {
+    /* Нижній блок: одна прямокутна картинка, шириною, рівною сумі двох колонок */
+    .full-width {
       max-width: 1000px;
       margin: 20px auto 0;
-    }
-    .bottom-full .img-block {
-      background: #ddd;
+      position: relative;
       border-radius: 8px;
       overflow: hidden;
-      position: relative;
     }
-    .bottom-full .img-block img {
+    .full-width img {
       width: 100%;
       display: block;
     }
-    .bottom-full .img-block .caption {
-      padding: 10px;
-      font-size: 0.9rem;
-      background: rgba(0,0,0,0.6);
-      color: #fff;
+    .full-width .caption {
       position: absolute;
       bottom: 0;
       width: 100%;
+      padding: 8px;
+      background: rgba(0,0,0,0.6);
+      font-size: 0.9rem;
+      color: #fff;
     }
     
     /* Адаптивність */
@@ -290,10 +296,13 @@
       .hero-description {
         font-size: 1rem;
       }
+      .container {
+        flex-direction: column;
+      }
       .block-image-left, .block-image-right {
         flex-direction: column;
       }
-      .col2 .top-row {
+      .grid {
         flex-direction: column;
       }
     }
@@ -307,9 +316,7 @@
         <span class="icon"></span>
         <span>So•U•LLY</span>
       </div>
-      <div class="hero-slogan">
-        So U Learn to Love Yourself
-      </div>
+      <div class="hero-slogan">So U Learn to Love Yourself</div>
       <div class="hero-description">
         Покращити якість життя, віднайти внутрішній спокій, позбавитися від гнітючих думок, оздоровити власне тіло цілком реально з додатком медитацій та здоров’я Soully.
       </div>
@@ -321,63 +328,62 @@
   </section>
   
   <!-- 2. Другий екран -->
-  <section class="screen dark parallax">
-    <div class="screen-content">
-      <div class="block-image-left" style="position: relative;">
+  <section class="screen parallax dark">
+    <div class="container">
+      <div class="block-image-left">
         <div class="img-container">
-          <img src="second-image.jpg" alt="Місце сили">
+          <img src="second.jpg" alt="Місце сили і гармонії">
         </div>
-        <div class="floating-title" style="right: 0;">Місце сили і гармонії поміж буремних подій життя.</div>
         <div class="text-container">
           <p>Осели тишу всередині себе із дихальними, медитативними, психологічними та рейкі практиками авторського додатку Soully.</p>
         </div>
+        <div class="floating-title">Місце сили і гармонії поміж буремних подій життя.</div>
       </div>
     </div>
   </section>
   
   <!-- 3. Третій екран -->
-  <section class="screen dark parallax">
-    <div class="screen-content">
-      <div class="block-image-right" style="position: relative;">
-        <div class="floating-title" style="left: 0;">Віднови баланс між емоціями, думками та діями.</div>
+  <section class="screen parallax dark">
+    <div class="container">
+      <div class="block-image-right">
+        <div class="floating-title">Віднови баланс між емоціями, думками та діями.</div>
         <div class="text-container">
           <p>Займайся за індивідуальною релакс-програмою коли тобі зручно.</p>
         </div>
         <div class="img-container">
-          <img src="third-image.jpg" alt="Баланс">
+          <img src="third.jpg" alt="Баланс">
         </div>
       </div>
     </div>
   </section>
   
-  <!-- 4. Блок з 7 картинок -->
+  <!-- 4. Галерея з 7 картинок -->
   <section class="gallery">
-    <div class="top-grid">
+    <div class="grid">
       <div class="col1">
-        <!-- Перша колонка: одна картинка зверху -->
         <div class="img-block">
           <img src="image1.jpg" alt="#Аудіо">
           <div class="caption">
             #Аудіо. Терапія звуком. Бінауральні ритми, співочі чаші, ASMR, звуки природи… - обери бажаний енергетичний ефект.
           </div>
         </div>
-        <!-- Дві картинки внизу -->
-        <div class="img-block">
-          <img src="image2.jpg" alt="#Пранаями">
-          <div class="caption">
-            #Пранаями. Техніки дихання для відновлення балансу нервової системи.
+        <div class="top">
+          <div class="img-block">
+            <img src="image2.jpg" alt="#Пранаями">
+            <div class="caption">
+              #Пранаями. Техніки дихання для відновлення балансу нервової системи.
+            </div>
           </div>
-        </div>
-        <div class="img-block">
-          <img src="image3.jpg" alt="#У стилі Майндфулнес">
-          <div class="caption">
-            #У стилі Майндфулнес. Практики позбавляють звички негативно мислити, налагоджують здорові стосунки зі світом і собою.
+          <div class="img-block">
+            <img src="image3.jpg" alt="#У стилі Майндфулнес">
+            <div class="caption">
+              #У стилі Майндфулнес. Практики позбавляють звички негативно мислити, налагоджують здорові стосунки зі світом і собою.
+            </div>
           </div>
         </div>
       </div>
       <div class="col2">
-        <!-- Друга колонка: два зображення зверху -->
-        <div class="top-row">
+        <div class="top">
           <div class="img-block">
             <img src="image4.jpg" alt="#Медитативні казки для дітей">
             <div class="caption">
@@ -391,19 +397,17 @@
             </div>
           </div>
         </div>
-        <!-- Одна картинка внизу -->
-        <div class="bottom-row">
+        <div class="bottom">
           <div class="img-block">
             <img src="image6.jpg" alt="#Дистанційні сеанси Рейкі">
             <div class="caption">
-              #Дистанційні сеанси Рейкі. Глибока енергетична практика, що занурює в цілющий спокій де відбувається найкраще оздоровлення тіла, емоцій, життя. Робота з психосоматикою.
+              #Дистанційні сеанси Рейкі. Глибока енергетична практика, що занурює в цілющий спокій, де відбувається найкраще оздоровлення тіла, емоцій, життя. Робота з психосоматикою.
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Повна ширина: одна прямокутна картинка -->
-    <div class="bottom-full">
+    <div class="full-width">
       <div class="img-block">
         <img src="image7.jpg" alt="#Авторський аудіокурс">
         <div class="caption">
