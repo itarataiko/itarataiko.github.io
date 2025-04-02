@@ -178,24 +178,23 @@
       font-weight: 600;
     }
     
-    /* Заголовок перед галереєю */
-    .gallery-header {
-      width: 100%;
-      padding: 20px;
-      text-align: center;
-      background-color: #18143E;
-      color: #fff;
-    }
-    .gallery-header h2 {
-      font-size: 1.8rem;
-      margin: 0;
-    }
-    
     /* 4. Галерея з 7 картинок */
     .gallery {
       background-color: #18143E;
       padding: 40px 20px;
       color: #fff;
+    }
+    /* Заголовок всередині секції gallery */
+    .gallery header {
+      max-width: 1000px;
+      margin: 0 auto 20px;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+    .gallery header h2 {
+      font-size: 1.8rem;
+      margin: 0;
     }
     .gallery .grid {
       display: flex;
@@ -400,13 +399,11 @@
     </div>
   </section>
   
-  <!-- Заголовок перед галереєю -->
-  <section class="gallery-header">
-    <h2>Віднови баланс між емоціями, думками та діями. Займайся за індивідуальною релакс-програмою коли тобі зручно.</h2>
-  </section>
-  
-  <!-- 4. Галерея з 7 картинок -->
+  <!-- 4. Галерея з 7 картинок з заголовком -->
   <section class="gallery">
+    <header class="gallery-header">
+      <h2>Віднови баланс між емоціями, думками та діями. Займайся за індивідуальною релакс-програмою коли тобі зручно.</h2>
+    </header>
     <div class="grid">
       <div class="col1">
         <div class="img-block">
