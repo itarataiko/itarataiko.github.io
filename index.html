@@ -112,7 +112,6 @@
     .screen .container {
       max-width: 1000px;
       margin: 0 auto;
-      position: relative;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -178,23 +177,11 @@
       font-weight: 600;
     }
     
-    /* 4. Галерея з 7 картинок */
+    /* 4. Секція галереї з 7 картинок (існуюча) */
     .gallery {
       background-color: #18143E;
       padding: 40px 20px;
       color: #fff;
-    }
-    /* Заголовок всередині секції gallery */
-    .gallery header {
-      max-width: 1000px;
-      margin: 0 auto 20px;
-      padding: 20px;
-      text-align: center;
-      color: #fff;
-    }
-    .gallery header h2 {
-      font-size: 1.8rem;
-      margin: 0;
     }
     .gallery .grid {
       display: flex;
@@ -202,7 +189,6 @@
       margin: 0 auto;
       gap: 20px;
     }
-    /* Перша колонка: одна картинка зверху, дві знизу */
     .col1 {
       flex: 1;
       display: flex;
@@ -214,7 +200,6 @@
       gap: 20px;
     }
     .col1 .img-block {
-      flex: 1;
       position: relative;
       border-radius: 8px;
       overflow: hidden;
@@ -223,7 +208,6 @@
       width: 100%;
       display: block;
     }
-    /* Галерея: підписи займають все поле картинки, вирівнюються по лівому краю */
     .gallery .img-block .caption {
       position: absolute;
       top: 0;
@@ -248,7 +232,6 @@
     .gallery .img-block .caption .caption-text {
       font-size: 1rem;
     }
-    /* Друга колонка: два зображення зверху, одне знизу */
     .col2 {
       flex: 1;
       display: flex;
@@ -260,7 +243,6 @@
       gap: 20px;
     }
     .col2 .img-block {
-      flex: 1;
       position: relative;
       border-radius: 8px;
       overflow: hidden;
@@ -293,7 +275,6 @@
     .col2 .img-block .caption .caption-text {
       font-size: 1rem;
     }
-    /* Нижній блок: одна прямокутна картинка, займає 30% висоти вікна */
     .full-width {
       max-width: 1000px;
       margin: 20px auto 0;
@@ -331,6 +312,79 @@
     }
     .full-width .caption .caption-text {
       font-size: 1rem;
+    }
+    
+    /* 5. Секція галереї скрінів додатку (розташована в кінці сторінки) */
+    .screenshots-section {
+      background-color: #18143E;
+      padding: 40px 20px;
+      color: #fff;
+    }
+    .screenshots-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .screenshots-gallery {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .screenshots-gallery .img-block {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .screenshots-gallery .img-block img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .screenshots-text {
+      flex: 1;
+      text-align: right;
+      padding-left: 20px;
+      margin-top: 0;
+    }
+    .screenshots-text h2 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .screenshots-text h2 span {
+      display: block;
+    }
+    .screenshots-text p {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+    
+    /* Для мобільних: секція стає вертикальною, галерея - горизонтальною прокруткою */
+    @media (max-width: 768px) {
+      .screenshots-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .screenshots-text {
+        text-align: center;
+        padding-left: 0;
+        margin-bottom: 20px;
+      }
+      .screenshots-gallery {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding-bottom: 20px;
+      }
+      .screenshots-gallery .img-block {
+        flex: 0 0 auto;
+        width: 80%;
+        height: auto;
+      }
     }
     
     /* Адаптивність */
@@ -399,7 +453,7 @@
     </div>
   </section>
   
-  <!-- 4. Галерея з 7 картинок з заголовком -->
+  <!-- 4. Галерея з 7 картинок (існуюча) -->
   <section class="gallery">
     <header class="gallery-header">
       <h2>Віднови баланс між емоціями, думками та діями. Займайся за індивідуальною релакс-програмою коли тобі зручно.</h2>
@@ -465,6 +519,26 @@
           <span class="caption-title">#Авторський аудіокурс.</span>
           <span class="caption-text"> На основі майндфулнес і статті-підказки для легкої корисної практики.</span>
         </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 5. Секція галереї скрінів додатку (розташована в кінці сторінки) -->
+  <section class="screenshots-section">
+    <div class="screenshots-container">
+      <div class="screenshots-gallery">
+        <div class="img-block"><img src="images/screenshot1.webp" alt="Screen 1"></div>
+        <div class="img-block"><img src="images/screenshot2.webp" alt="Screen 2"></div>
+        <div class="img-block"><img src="images/screenshot3.webp" alt="Screen 3"></div>
+        <div class="img-block"><img src="images/screenshot4.webp" alt="Screen 4"></div>
+        <div class="img-block"><img src="images/screenshot5.webp" alt="Screen 5"></div>
+      </div>
+      <div class="screenshots-text">
+        <h2>
+          <span>Обирай</span>
+          <span>SOULLY</span>
+        </h2>
+        <p>додаток, що подбає про твій спокій</p>
       </div>
     </div>
   </section>
