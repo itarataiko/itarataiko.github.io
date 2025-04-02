@@ -290,8 +290,7 @@ body {
     }
 
     .hero-image-column {
-        order: -1;
-        margin-bottom: var(--spacing-medium);
+        display: none;
     }
 
     .hero-image {
