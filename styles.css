@@ -286,22 +286,16 @@ body {
         gap: 4px;
     }
 
-    /* Убираем вложенную структуру колонок и рядов */
-    .feature-column {
-        display: contents;
-    }
-
+    /* Сбрасываем все вложенные структуры */
+    .feature-column,
     .feature-row {
+        all: unset;
         display: contents;
     }
 
-    /* Все ячейки становятся одинакового размера */
-    .feature-item,
-    .feature-item.wide,
-    .feature-item.double-width,
-    .feature-item.full-width,
-    .feature-column .feature-item:not(.feature-row .feature-item) {
-        width: 100%;
+    /* Общие стили для всех ячеек */
+    .feature-item {
+        width: 100% !important;
         aspect-ratio: 1;
         position: relative;
         height: 0;
@@ -314,6 +308,15 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
+    }
+
+    /* Сбрасываем все специальные классы */
+    .feature-item.wide,
+    .feature-item.double-width,
+    .feature-item.full-width,
+    .feature-item.right-column {
+        width: 100% !important;
+        grid-column: auto;
     }
 
     .hero-content {
