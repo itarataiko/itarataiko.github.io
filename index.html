@@ -23,7 +23,7 @@
       color: inherit;
     }
     
-    /* Параллакс для фоновых секций */
+    /* Параллакс для фоновых секцій */
     .parallax {
       background-attachment: fixed;
       background-position: center;
@@ -38,16 +38,16 @@
       height: 100vh;
       background: url("images/desktop-banner.webp") no-repeat center center/cover;
     }
-    /* Для мобільних пристроїв */
     @media (max-width: 768px) {
       .hero {
-        background: url("images/desktop-banner.webp") no-repeat center center/cover;
+        background: url("images/mobile-banner.webp") no-repeat center center/cover;
       }
     }
     .hero::after {
       content: "";
       position: absolute;
-      top: 0; left: 0;
+      top: 0; 
+      left: 0;
       width: 100%;
       height: 100%;
       background: rgba(0,0,0,0.35);
@@ -66,7 +66,6 @@
       padding: 20px;
       color: #fff;
     }
-    /* Заголовок: іконка зліва, текст по центру */
     .hero-title {
       display: flex;
       align-items: center;
@@ -118,7 +117,6 @@
       flex-wrap: wrap;
       align-items: center;
     }
-    /* Блок з картинкою зліва і текстом справа */
     .block-image-left {
       flex: 1;
       display: flex;
@@ -133,6 +131,7 @@
     .block-image-left .img-container img {
       width: 100%;
       border-radius: 8px;
+      display: block;
     }
     .block-image-left .text-container {
       flex: 1 1 400px;
@@ -140,7 +139,6 @@
       font-size: 1.1rem;
       line-height: 1.6;
     }
-    /* Заголовок, що обтікає картинку (розташований зверху праворуч) */
     .block-image-left .floating-title {
       position: absolute;
       top: 20px;
@@ -164,6 +162,7 @@
     .block-image-right .img-container img {
       width: 100%;
       border-radius: 8px;
+      display: block;
     }
     .block-image-right .text-container {
       flex: 1 1 400px;
@@ -191,7 +190,7 @@
       margin: 0 auto;
       gap: 20px;
     }
-    /* Перша колонка: одна картинка зверху, дві знизу (рядом) */
+    /* Перша колонка: одна картинка зверху, дві знизу */
     .col1 {
       flex: 1;
       display: flex;
@@ -202,13 +201,7 @@
       display: flex;
       gap: 20px;
     }
-    .col1 .top .img-block {
-      flex: 1;
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .col1 .bottom .img-block {
+    .col1 .img-block {
       flex: 1;
       position: relative;
       border-radius: 8px;
@@ -227,7 +220,7 @@
       font-size: 0.9rem;
       color: #fff;
     }
-    /* Друга колонка: два зображення зверху (рядом) та одне знизу */
+    /* Друга колонка: два зображення зверху, одне знизу */
     .col2 {
       flex: 1;
       display: flex;
@@ -238,13 +231,7 @@
       display: flex;
       gap: 20px;
     }
-    .col2 .top .img-block {
-      flex: 1;
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .col2 .bottom .img-block {
+    .col2 .img-block {
       flex: 1;
       position: relative;
       border-radius: 8px;
@@ -263,16 +250,19 @@
       font-size: 0.9rem;
       color: #fff;
     }
-    /* Нижній блок: одна прямокутна картинка, шириною, рівною сумі двох колонок */
+    /* Нижній блок: одна прямокутна картинка */
     .full-width {
       max-width: 1000px;
       margin: 20px auto 0;
       position: relative;
       border-radius: 8px;
       overflow: hidden;
+      height: 30vh; /* займає 30% висоти вікна */
     }
     .full-width img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
     .full-width .caption {
@@ -296,13 +286,7 @@
       .hero-description {
         font-size: 1rem;
       }
-      .container {
-        flex-direction: column;
-      }
-      .block-image-left, .block-image-right {
-        flex-direction: column;
-      }
-      .grid {
+      .container, .block-image-left, .block-image-right, .grid {
         flex-direction: column;
       }
     }
