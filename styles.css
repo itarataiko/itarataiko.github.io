@@ -282,6 +282,38 @@ body {
 
     .feature-grid {
         grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .feature-column {
+        gap: 4px;
+    }
+
+    .feature-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    /* Сбрасываем все специальные размеры ячеек на мобильной версии */
+    .feature-item.wide,
+    .feature-column .feature-item:not(.feature-row .feature-item),
+    .feature-item.double-width,
+    .feature-item.full-width {
+        width: 100%;
+        aspect-ratio: 1;
+        position: relative;
+        height: 0;
+        padding-bottom: 100%;
+    }
+
+    /* Обеспечиваем одинаковое позиционирование контента для всех ячеек */
+    .feature-item .feature-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     .hero-content {
