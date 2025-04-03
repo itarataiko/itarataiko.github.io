@@ -1,9 +1,9 @@
 :root {
     --primary-color: #18143E;
     --text-light: #ffffff;
-    --spacing-large: 120px;
-    --spacing-medium: 60px;
-    --spacing-small: 30px;
+    --spacing-large: 60px;
+    --spacing-medium: 30px;
+    --spacing-small: 15px;
 }
 
 * {
@@ -122,7 +122,7 @@ body {
 
 /* Features Section */
 .features {
-    padding: var(--spacing-large) var(--spacing-medium);
+    padding: var(--spacing-medium) var(--spacing-medium);
     background-color: var(--primary-color);
 }
 
@@ -287,7 +287,10 @@ body {
         font-size: 0.8rem;
     }
 
-    .features {
+    .features,
+    .gallery,
+    .about-author,
+    .program {
         padding: var(--spacing-medium) var(--spacing-small);
     }
 
@@ -406,7 +409,7 @@ html {
 
 /* Gallery Section */
 .gallery {
-    padding: var(--spacing-large) var(--spacing-medium);
+    padding: var(--spacing-medium) var(--spacing-medium);
     background-color: var(--primary-color);
 }
 
@@ -415,8 +418,8 @@ html {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 0 var(--spacing-medium);
+    gap: 15px;
+    padding: 0 var(--spacing-small);
 }
 
 /* Позиционирование элементов в сетке */
@@ -537,7 +540,7 @@ html {
 
 /* About Author Section */
 .about-author {
-    padding: var(--spacing-large) var(--spacing-medium);
+    padding: var(--spacing-medium) var(--spacing-medium);
     background-color: var(--primary-color);
 }
 
@@ -546,8 +549,8 @@ html {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-large);
-    padding: 0 var(--spacing-medium);
+    gap: var(--spacing-medium);
+    padding: 0 var(--spacing-small);
 }
 
 .about-text-column {
@@ -676,7 +679,7 @@ html {
 
 /* Program Section */
 .program {
-    padding: var(--spacing-large) var(--spacing-medium);
+    padding: var(--spacing-medium) var(--spacing-medium);
     background-color: var(--primary-color);
 }
 
@@ -685,8 +688,8 @@ html {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-large);
-    padding: 0 var(--spacing-medium);
+    gap: var(--spacing-medium);
+    padding: 0 var(--spacing-small);
 }
 
 .program-text-column {
@@ -736,7 +739,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-small);
+    gap: calc(var(--spacing-small) / 2);
 }
 
 .program-links .privacy-link {
