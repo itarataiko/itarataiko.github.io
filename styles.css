@@ -751,3 +751,78 @@ html {
         font-size: 1rem;
     }
 }
+
+.privacy-page {
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    padding: var(--spacing-large) var(--spacing-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.privacy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    color: var(--text-light);
+}
+
+.privacy-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-medium);
+    color: #8FBFFA;
+}
+
+.privacy-content .last-updated {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: var(--spacing-large);
+}
+
+.privacy-content section {
+    margin-bottom: var(--spacing-large);
+}
+
+.privacy-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-small);
+    color: #8FBFFA;
+}
+
+.privacy-content p {
+    line-height: 1.6;
+    margin-bottom: var(--spacing-small);
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .privacy-page {
+        padding: var(--spacing-medium) var(--spacing-small);
+        align-items: flex-start;
+    }
+
+    .privacy-content {
+        padding: var(--spacing-medium);
+    }
+
+    .privacy-content h1 {
+        font-size: 2rem;
+    }
+
+    .privacy-content h2 {
+        font-size: 1.3rem;
+    }
+}
+
+.email-link {
+    color: #8FBFFA;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.email-link:hover {
+    opacity: 0.8;
+}
