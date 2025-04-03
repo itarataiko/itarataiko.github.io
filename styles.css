@@ -1,9 +1,9 @@
 :root {
     --primary-color: #18143E;
     --text-light: #ffffff;
-    --spacing-large: 60px;
-    --spacing-medium: 30px;
-    --spacing-small: 15px;
+    --spacing-large: 80px;
+    --spacing-medium: 40px;
+    --spacing-small: 20px;
 }
 
 * {
@@ -122,7 +122,7 @@ body {
 
 /* Features Section */
 .features {
-    padding: var(--spacing-medium) var(--spacing-medium);
+    padding: var(--spacing-large) var(--spacing-medium);
     background-color: var(--primary-color);
 }
 
@@ -409,7 +409,7 @@ html {
 
 /* Gallery Section */
 .gallery {
-    padding: var(--spacing-medium) var(--spacing-medium);
+    padding: var(--spacing-large) var(--spacing-medium);
     background-color: var(--primary-color);
 }
 
@@ -540,7 +540,7 @@ html {
 
 /* About Author Section */
 .about-author {
-    padding: var(--spacing-medium) var(--spacing-medium);
+    padding: var(--spacing-large) var(--spacing-medium);
     background-color: var(--primary-color);
 }
 
@@ -679,7 +679,7 @@ html {
 
 /* Program Section */
 .program {
-    padding: var(--spacing-medium) var(--spacing-medium);
+    padding: var(--spacing-large) var(--spacing-medium);
     background-color: var(--primary-color);
 }
 
