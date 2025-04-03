@@ -168,19 +168,16 @@
         <div class="program-container">
             <div class="program-text-column">
                 <h2>Позбався<br>зайвої метушні.<br>SOULLY - твої зміни на краще.</h2>
-                <a href="https://apps.apple.com/app/id6743348367" class="app-store-link">
-                    <img src="assets/images/app_store.svg" alt="Download on App Store" class="app-store-button">
-                </a>
+                <div class="program-links">
+                    <a href="https://apps.apple.com/app/id6743348367" class="app-store-link">
+                        <img src="assets/images/app_store.svg" alt="Download on App Store" class="app-store-button">
+                    </a>
+                    <a href="privacy.html" class="privacy-link">Політика конфіденційності</a>
+                </div>
             </div>
             <div class="program-image-column">
                 <img src="assets/images/last-section-screeen.webp" alt="Soully App Screen" class="program-image">
             </div>
-        </div>
-    </section>
-
-    <section class="privacy">
-        <div class="privacy-container">
-            <a href="privacy.html" class="privacy-link">Політика конфіденційності</a>
         </div>
     </section>
 
@@ -189,5 +186,14 @@
         <p>*** Без реєстрації: застосунок не збирає персональні данні</p>
     </div>
 
+    <script>
+        const disclaimer = document.querySelector('.disclaimer');
+        const privacyPage = document.querySelector('.privacy-page');
+
+        // Если мы на странице privacy, скрываем disclaimer
+        if (privacyPage) {
+            disclaimer && disclaimer.classList.add('disclaimer-hidden');
+        }
+    </script>
 </body>
 </html>

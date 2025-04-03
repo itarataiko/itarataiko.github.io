@@ -100,13 +100,24 @@ body {
 
 .disclaimer {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
-    text-align: right;
-    font-size: 0.9rem;
-    opacity: 0.8;
-    z-index: 10;
+    bottom: 20px;
+    right: 20px;
+    max-width: 80%;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 1000;
+    background-color: rgba(24, 20, 62, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
     line-height: 1.8;
+}
+
+.disclaimer-hidden {
+    transform: translateY(100%);
+    opacity: 0;
 }
 
 /* Features Section */
@@ -340,6 +351,27 @@ body {
 
     .hero-image {
         max-height: 50vh;
+    }
+
+    .about-image-column {
+        gap: var(--spacing-small);
+        align-items: center;
+        width: 100%;
+    }
+
+    .about-image {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .program-image-column {
+        align-items: center;
+        width: 100%;
+    }
+
+    .program-image {
+        width: 80%;
+        margin: 0 auto;
     }
 }
 
@@ -607,14 +639,22 @@ html {
     .about-container {
         grid-template-columns: 1fr;
         gap: var(--spacing-medium);
+        padding: 0;
     }
 
-    .about-text-column h2 {
-        font-size: 3rem;
+    .about-text-column {
+        align-items: center;
+        text-align: center;
     }
 
     .about-logo {
-        font-size: 3rem;
+        font-size: 2.2rem;
+        justify-content: center;
+    }
+
+    .about-text-column h2 {
+        font-size: 2.2rem;
+        text-align: center;
     }
 
     .about-image-column {
@@ -692,6 +732,23 @@ html {
     height: auto;
 }
 
+.program-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-small);
+}
+
+.program-links .privacy-link {
+    font-size: 1rem;
+    margin-top: -10px;  /* Немного приблизим к кнопке */
+}
+
+/* Удаляем старую секцию privacy */
+.privacy {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .program {
         padding: var(--spacing-medium) var(--spacing-small);
@@ -700,6 +757,7 @@ html {
     .program-container {
         grid-template-columns: 1fr;
         gap: var(--spacing-medium);
+        padding: 0;
     }
 
     .program-text-column {
@@ -708,50 +766,20 @@ html {
     }
 
     .program-text-column h2 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .app-store-button {
         width: 140px;
     }
+
+    .program-links {
+        width: 100%;
+        gap: calc(var(--spacing-small) / 2);  /* Уменьшаем отступ для мобильной версии */
+    }
 }
 
 /* Privacy Section */
-.privacy {
-    padding: 0 var(--spacing-medium) var(--spacing-medium);
-    background-color: var(--primary-color);
-    margin-top: -40px;
-}
-
-.privacy-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-medium);
-    text-align: center;
-}
-
-.privacy-link {
-    color: #8FBFFA;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: opacity 0.3s ease;
-}
-
-.privacy-link:hover {
-    opacity: 0.8;
-}
-
-@media (max-width: 768px) {
-    .privacy {
-        padding: 0 var(--spacing-small) var(--spacing-small);
-        margin-top: -20px;
-    }
-
-    .privacy-link {
-        font-size: 1rem;
-    }
-}
-
 .privacy-page {
     background-color: var(--primary-color);
     min-height: 100vh;
