@@ -829,6 +829,32 @@ html {
     opacity: 0.9;
 }
 
+.privacy-content ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-bottom: var(--spacing-small);
+}
+
+.privacy-content ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.privacy-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #8FBFFA;
+}
+
+.privacy-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-small);
+    color: #8FBFFA;
+    margin-top: var(--spacing-medium);
+}
+
 @media (max-width: 768px) {
     .privacy-page {
         padding: var(--spacing-medium) var(--spacing-small);
